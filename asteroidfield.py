@@ -6,6 +6,22 @@ from constants import (SCREEN_HEIGHT, SCREEN_WIDTH, ASTEROID_MAX_RADIUS,
 
 
 class AsteroidField(pygame.sprite.Sprite):
+    """
+    AsteroidField is a sprite responsible for spawning and managing asteroids in the game.
+
+    Attributes:
+        edges (list): Defines the four edges of the screen where asteroids can spawn. Each edge is represented by a direction vector and a function that generates a spawn position along that edge.
+
+    Methods:
+        __init__():
+            Initializes the AsteroidField sprite and its spawn timer.
+
+        spawn(radius, position, velocity):
+            Creates a new Asteroid instance at the given position, with the specified radius and velocity.
+
+        update(dt):
+            Updates the spawn timer. When the timer exceeds ASTEROID_SPAWN_RATE, spawns a new asteroid at a random edge with randomized velocity and size.
+    """
     edges = [
         [
             pygame.Vector2(1, 0),
