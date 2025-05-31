@@ -7,6 +7,20 @@ from shot import Shot
 from asteroidfield import AsteroidField
 
 def main():
+    """
+    Initializes the Asteroids game, sets up the display, sprite groups, and main game loop.
+    - Initializes pygame and creates the main game window.
+    - Sets up sprite groups for updateable, drawable, asteroids, and shots.
+    - Assigns sprite containers for Player, Asteroid, AsteroidField, and Shot classes.
+    - Instantiates the player and asteroid field.
+    - Runs the main game loop:
+        - Handles quit events.
+        - Updates all updateable sprites.
+        - Checks for collisions between the player and asteroids (ends game on collision).
+        - Checks for collisions between shots and asteroids (splits asteroids and removes shots).
+        - Draws all drawable sprites to the screen.
+        - Updates the display and manages frame timing.
+    """
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     print("Starting Asteroids!")
